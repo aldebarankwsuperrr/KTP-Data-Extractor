@@ -2,9 +2,9 @@
 
 ## 🚀 Project Overview
 
-The **KTP Data Extractor** is an advanced machine learning-powered application that extracts critical information from **Indonesian KTP (Kartu Tanda Penduduk)** images. Using object detection, segmentation, and OCR (Optical Character Recognition) technology, the application efficiently detects the KTP area, crops it, and reads the text fields.
+The **KTP Data Extractor** is an advanced machine learning-powered application that extracts critical information from **Indonesian KTP (Kartu Tanda Penduduk)** images. Using object detection, segmentation, and document parsing technology, the application efficiently detects the KTP area, crops it, and reads the text fields.
 
-By utilizing **YOLO for object detection**, **Oriented Bounding Boxes (OBB)**, and **Donut🍩 OCR models**, this app provides a complete solution for extracting and processing structured KTP data with high accuracy.
+By utilizing **YOLO for object detection**, **Oriented Bounding Boxes (OBB)**, and **Donut🍩 models**, this app provides a complete solution for extracting and processing structured KTP data with high accuracy.
 
 ---
 
@@ -12,7 +12,7 @@ By utilizing **YOLO for object detection**, **Oriented Bounding Boxes (OBB)**, a
 
 - **Automatic KTP Detection**: Detects KTP area from an image, even when it’s not perfectly aligned.
 - **Oriented Bounding Box (OBB) Detection**: Accurately determines the orientation and corners of the KTP in the image.
-- **OCR with Donut🍩 Model**: Extracts text information (name, ID number, birthdate, etc.) from the KTP image.
+- **Document Parsing with Donut🍩 Model**: Extracts text information (NIK, gender, and religion) from the KTP image.
 - **Streamlit Web Interface**: Intuitive and user-friendly web interface for uploading KTP images and viewing extracted data in real-time.
 - **GPU Support**: Supports GPU acceleration for fast inference on large datasets.
 
@@ -21,7 +21,7 @@ By utilizing **YOLO for object detection**, **Oriented Bounding Boxes (OBB)**, a
 ## 🧠 Technologies Used
 
 - **YOLOv8**: For oriented bounding box object detection and segmentation of the KTP area.
-- **Donut🍩 (VisionEncoderDecoderModel)**: A state-of-the-art OCR model for extracting text data from images.
+- **Donut🍩 (VisionEncoderDecoderModel)**: Document understanding transformer, is a new method of document understanding that utilizes an -free end-to-end Transformer model.
 - **OpenCV**: For image processing and transformation.
 - **Streamlit**: To build the interactive web-based user interface.
 - **PyTorch**: For running and handling deep learning models.
@@ -67,7 +67,7 @@ The application requires several pre-trained models. Download or place the follo
 
 1. **YOLO Segmentation Model** (`segment_model.pt`)
 2. **YOLO OBB Model** (`obb_model.pt`)
-3. **Donut🍩 Processor and OCR Model** (`donut_ktp_processor` and `donut_ktp_model`)
+3. **Donut🍩 Processor and Model** (`donut_ktp_processor` and `donut_ktp_model`)
 
 Place these models in the correct paths as indicated in the `app.py` file or the `models.py` module.
 
@@ -104,7 +104,7 @@ http://localhost:8501
 ### 2. **Perspective Transformation**:
    - Using OpenCV, the detected KTP card is wrapped and aligned into a fixed-size rectangular image for easier text extraction.
 
-### 3. **OCR Processing**:
+### 3. **Document Parsing**:
    - The aligned KTP image is passed to the **Donut VisionEncoderDecoderModel**, which extracts key text fields such as the NIK, Gender, and Religion.
    
 ### 4. **Display Results**:
@@ -143,8 +143,7 @@ Some ideas for enhancing this project in the future:
 1. **Batch Processing**: Enable batch processing for multiple KTP images at once.
 2. **Enhanced Detection**: Optimize KTP detection for more precise wrapping and alignment, ensuring better accuracy and presentation.
 3. **Model Improvements**: Fine-tune models for more accurate detection and text extraction.
-4. **Multilingual Support**: Expand the OCR capabilities to support multiple languages.
-5. **Mobile Deployment**: Create a mobile version for easier KTP extraction on-the-go.
+4. **Mobile Deployment**: Create a mobile version for easier KTP extraction on-the-go.
 
 ---
 ## 🤝 Contributing
