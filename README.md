@@ -144,6 +144,7 @@ Some ideas for enhancing this project in the future:
 2. **Enhanced Detection**: Optimize KTP detection for more precise wrapping and alignment, ensuring better accuracy and presentation.
 3. **Model Improvements**: Fine-tune models for more accurate detection and text extraction.
 4. **Mobile Deployment**: Create a mobile version for easier KTP extraction on-the-go.
+5. **Expanded Data Extraction**: Enhance the project to extract additional key information from the KTP, such as name, address, date of birth, and other important details, providing a more comprehensive data extraction solution.
 
 ---
 ## 🤝 Contributing
